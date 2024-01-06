@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Sophie Bluel - Login</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+
+<header>
+    <h1> Sophie Bluel <span>ARCHITECTE D'INTERIEUR</span> </h1>
+    <nav>
+        <ul>
+            <li><a href="./index.html"> projetcs</a></li>
+            <li>contact</li>
+            <li>login</li>
+            <li><img src="assets/icons/instagram.png" alt="icone insta'"></li>
+        </ul>
+    </nav>
+</header>
+<main id="contact">
+
+    <h2>Log In </h2>
+
+    <form action="#" method="post">
+        <label for="email">E-mail</label>
+        <input type="email" name="email" id="email">
+        <label for="password">Mot de passe</label>
+        <input type="password" name="password" id="password">
+        <input type="submit" value="Se connecter" id="formSubmit">
+    </form>
+
+
+   <p style="text-decoration: underline;"> Mot de passe oublié </p>
+
+</main>
+<footer>
+    <nav>
+		<ul>
+			<li>Mention légales</li>
+		</ul>
+	</nav>
+</footer>
+
+<script>
+    localStorage.removeItem('jwt')
+    document.getElementById("formSubmit").addEventListener("click", function (e){
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    const loginData = {
+        email: email,
+        password: password
+    };
+
+    fetch('http://localhost:5678/api/users/login', {
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(loginData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("data", data);
+        if (data.token) {
+            window.localStorage.setItem("jwt", data.token);
+            window.localStorage.setItem("connected", true);
+            window.location.replace("http://127.0.0.1:5500/FrontEnd/index.html");         
+        } else {
+            document.getElementById("msg-error").innerHTML += "Erreur dans l’identifiant ou le mot de passe";
+        }
+    })
+    console.log(loginData)
+    e.preventDefault();
+});
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,409 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/** end reset css**/
+body {
+	max-width: 1140px;
+	margin:auto;
+	font-family: 'Work Sans' ;
+	font-size: 14px;
+}
+header {
+	display: flex;
+	justify-content: space-between;
+	margin: 50px 0
+}
+section {
+	margin: 50px 0
+}
+
+h1{
+	display: flex;
+	flex-direction: column;
+	font-family: 'Syne';
+	font-size: 22px;
+	font-weight: 800;
+	color: #B1663C
+}
+
+h1 > span {
+	font-family: 'Work Sans';
+	font-size:10px;
+	letter-spacing: 0.1em;
+;
+}
+
+h2{
+	font-family: 'Syne';
+	font-weight: 700;
+	font-size: 30px;
+	color: #1D6154
+}
+nav ul {
+	display: flex;
+	align-items: center;
+	list-style-type: none;
+
+}
+nav li {
+	padding: 0 10px;
+	font-size: 1.2em;
+}
+
+li:hover {
+	color: #B1663C;
+}
+#introduction {
+	display: flex;
+	align-items: center;
+}
+#introduction figure {
+	flex: 1
+}
+#introduction img {
+	display: block;
+	margin: auto;
+	width: 80%;
+}
+
+#introduction article {
+	flex: 1
+}
+#introduction h2 {
+	margin-bottom: 1em;
+}
+
+#introduction p {
+	margin-bottom: 0.5em;
+}
+#portfolio h2 {
+	text-align: center;
+	margin-bottom: 1em;
+}
+.gallery {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-column-gap: 20px;
+	grid-row-gap: 20px;
+}
+
+.gallery img {
+	width: 100%;
+
+}
+#contact {
+	width: 50%;
+margin: auto;
+}
+#contact > * {
+	text-align: center;
+
+}
+#contact h2{
+	margin-bottom: 20px;
+}
+#contact form {
+	text-align: left;
+	margin-top:30px;
+	display: flex;
+	flex-direction: column;
+}
+
+#contact input {
+	height: 50px;
+	font-size: 1.2em;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+#contact label {
+	margin: 2em 0 1em 0;
+}
+#contact textarea {
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+input[type="submit"]{
+	font-family: 'Syne';
+	font-weight: 700;
+	color: white;
+	background-color: #1D6154;
+	margin : 2em auto ;
+	width: 180px;
+	text-align: center;
+	border-radius: 60px ;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+footer nav ul {
+	display: flex;
+	justify-content: flex-end;
+	margin: 2em
+}
+
+.myBtn {
+	cursor: pointer;
+	font-family: 'Work Sans', sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	color: black;
+}
+
+/* modale */
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	right: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+	
+}
+
+.galleryModale {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	
+
+}
+
+.modal-content {
+	background-color: #fff;
+	margin: 15% auto;
+	width: 630px;
+	height: 630px;
+	border-radius: 10px;
+	position: relative;
+	overflow: scroll;
+	display: flex;
+	justify-content: center;
+}
+
+.close {
+	position: absolute;
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+	right: 30px;
+	top: 30px;
+	height: 24px;
+	width: 24px;
+}
+
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+
+h3 {
+	font-family: 'Work Sans', sans-serif;
+	font-weight: 400;
+	font-size: 26px;
+	padding-top: 60px;
+	padding-bottom: 20px;
+	text-align: center;
+	
+}
+
+.modal-content img {
+	width: 83px;
+	height: 118px;
+}
+
+figcaption {
+	opacity: 0;
+}
+
+hr {
+	color: #B3B3B3;
+	width: 420px;
+	height: 0px;
+	border: 1px solid #B3B3B3;
+	left: 510px;
+	top: 1229px;
+	margin-top: 45px;
+}
+
+.ajout {
+	border-radius: 60px;
+	background: #1D6154;
+	width: 237px;
+	height: 36px;
+	margin-bottom: 45px;
+	margin-top: 36px;
+	text-align: center;
+	color: #fff;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	cursor: pointer;
+	flex-wrap: wrap;
+}
+
+#galleryModale figure {
+	width: 78px;
+	height: 105px;
+	margin: 0 5px 22px 5px;
+	justify-content: left;
+	margin-bottom: 60px;
+	display: flex;
+	position: relative;
+}
+
+/* module 2*/
+
+.ajoutTitre {
+	color: #3D3D3D;
+	font-family: 'work sans', sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	padding-top: 30px;
+	padding-bottom: 10px;
+}
+
+.boxTitre {
+	width: 420px;
+	height: 51px;
+	background-color: #fff;
+	box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.29);
+	border: none;
+}
+
+#media_form {
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	flex-wrap: wrap;
+}
+
+#media_category {
+	margin-bottom: 47px;
+	border: none;
+}
+
+.fa-arrow-left {
+	width: 21px;
+	height: 21px;
+	left: 30px;
+	top: 30px;
+	position: absolute;
+	cursor: pointer;
+}
+
+.boxPhoto {
+	height: 169px;
+	background-color: #e8f1f6;
+	border-radius: 3px;
+	align-content: center;
+	display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.boxPhoto .fa-regular {
+	height: 76px;
+	width: 76px;
+	padding-top: 13px;
+	padding-bottom: 6px;
+}
+
+.boxAjout {
+	border-radius: 50px;
+	width: 173px;
+	height: 36px;
+	background-color: #cbd6dc;
+}
+
+.boxImage {
+	color: #3b6685;
+	text-align: center;
+	font-family: 'Work Sans' sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: normal;
+}
+
+.boxText {
+	color: #444;
+	text-align: center;
+	font-family: 'Work Sans' sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	padding-top: 7px;
+	padding-bottom: 19px;
+}
+
+
+a.delete {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+#gallery a.delete {
+	display: none;
+}
